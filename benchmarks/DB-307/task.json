@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "benchmark_version": "1.0.0",
+  "id": "DB-307",
+  "title": "Parameterized tenant search",
+  "description": "Search SQLite records within a tenant while treating names as literal data.",
+  "category": "Data integrity",
+  "difficulty": "medium",
+  "language": "Python",
+  "runtime": "Python >=3.12",
+  "baseline": "baseline.py",
+  "checks": "checks.py",
+  "visible_prefix": "visible_",
+  "independent_prefixes": [
+    "security_",
+    "regression_"
+  ],
+  "reference": "reference",
+  "candidates": {
+    "reference": {
+      "file": "reference.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "pass"
+    },
+    "faulty": {
+      "file": "faulty.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "security_failure"
+    },
+    "regression": {
+      "file": "regression.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "regression_failure"
+    }
+  },
+  "sha256": {
+    "baseline.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+    "reference.py": "9392cb81c162cb7d3038045adbfa73b5350e1eb6087e773a56df2f68fa12ff88",
+    "faulty.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+    "regression.py": "11855ab97cfdb7ad119201ef4dc861b81778ad270010924635bcadb3e17f0e67",
+    "checks.py": "38931a9096d7bae847da0d6c455581d18b70950abfd8876d9912aed8dc120bbb"
+  },
+  "criteria": "All visible, security, and regression checks must pass. Separate category denominators; no weighted safety override."
+}

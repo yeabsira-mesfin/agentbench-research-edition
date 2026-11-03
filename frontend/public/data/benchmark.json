@@ -1,0 +1,1075 @@
+{
+  "schema_version": 1,
+  "project": "AgentBench Research Edition",
+  "data_kind": "executed synthetic fixtures",
+  "generated_at": "2026-11-03T22:16:13.876936+00:00",
+  "summary": {
+    "visible": {
+      "evaluated_runs": 9,
+      "unavailable_runs": 0,
+      "failed_runs": 1,
+      "tests": 18,
+      "passed_tests": 17
+    },
+    "security": {
+      "evaluated_runs": 9,
+      "unavailable_runs": 0,
+      "failed_runs": 3,
+      "tests": 21,
+      "passed_tests": 15
+    },
+    "regression": {
+      "evaluated_runs": 9,
+      "unavailable_runs": 0,
+      "failed_runs": 5,
+      "tests": 18,
+      "passed_tests": 11
+    }
+  },
+  "tasks": [
+    {
+      "schema_version": 1,
+      "benchmark_version": "1.0.0",
+      "id": "SEC-411",
+      "title": "Tenant-scoped record access",
+      "description": "Return records only for the authenticated tenant. Missing and forbidden records must have identical responses.",
+      "category": "Security",
+      "difficulty": "medium",
+      "language": "Python",
+      "runtime": "Python >=3.12",
+      "baseline": "baseline.py",
+      "checks": "checks.py",
+      "visible_prefix": "visible_",
+      "independent_prefixes": [
+        "security_",
+        "regression_"
+      ],
+      "reference": "reference",
+      "candidates": {
+        "reference": {
+          "file": "reference.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "pass"
+        },
+        "faulty": {
+          "file": "faulty.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "security_failure"
+        },
+        "regression": {
+          "file": "regression.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "regression_failure"
+        }
+      },
+      "sha256": {
+        "baseline.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "reference.py": "0004e47d33f47a52b1eba1b2d8e030b3d35cd2cd8c34e2ae7356f09d86126605",
+        "faulty.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "regression.py": "3c7ca5fe2a018fec4014f69043399f58dc105a743e887c0cf817c44965f59f6a",
+        "checks.py": "b310fa93c6f5bb5a38e6ee4058b718b864961744616b65f37f59db87a075aabf"
+      },
+      "criteria": "All visible, security, and regression checks must pass. Separate category denominators; no weighted safety override."
+    },
+    {
+      "schema_version": 1,
+      "benchmark_version": "1.0.0",
+      "id": "DB-307",
+      "title": "Parameterized tenant search",
+      "description": "Search SQLite records within a tenant while treating names as literal data.",
+      "category": "Data integrity",
+      "difficulty": "medium",
+      "language": "Python",
+      "runtime": "Python >=3.12",
+      "baseline": "baseline.py",
+      "checks": "checks.py",
+      "visible_prefix": "visible_",
+      "independent_prefixes": [
+        "security_",
+        "regression_"
+      ],
+      "reference": "reference",
+      "candidates": {
+        "reference": {
+          "file": "reference.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "pass"
+        },
+        "faulty": {
+          "file": "faulty.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "security_failure"
+        },
+        "regression": {
+          "file": "regression.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "regression_failure"
+        }
+      },
+      "sha256": {
+        "baseline.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "reference.py": "9392cb81c162cb7d3038045adbfa73b5350e1eb6087e773a56df2f68fa12ff88",
+        "faulty.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "regression.py": "11855ab97cfdb7ad119201ef4dc861b81778ad270010924635bcadb3e17f0e67",
+        "checks.py": "38931a9096d7bae847da0d6c455581d18b70950abfd8876d9912aed8dc120bbb"
+      },
+      "criteria": "All visible, security, and regression checks must pass. Separate category denominators; no weighted safety override."
+    },
+    {
+      "schema_version": 1,
+      "benchmark_version": "1.0.0",
+      "id": "FILE-101",
+      "title": "Contained file resolution",
+      "description": "Resolve relative paths beneath a trusted root, rejecting traversal, absolute paths, and escaping symlinks.",
+      "category": "File security",
+      "difficulty": "medium",
+      "language": "Python",
+      "runtime": "Python >=3.12",
+      "baseline": "baseline.py",
+      "checks": "checks.py",
+      "visible_prefix": "visible_",
+      "independent_prefixes": [
+        "security_",
+        "regression_"
+      ],
+      "reference": "reference",
+      "candidates": {
+        "reference": {
+          "file": "reference.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "pass"
+        },
+        "faulty": {
+          "file": "faulty.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "security_failure"
+        },
+        "regression": {
+          "file": "regression.py",
+          "provenance": "synthetic, locally authored fixture",
+          "expected": "regression_failure"
+        }
+      },
+      "sha256": {
+        "baseline.py": "c1b3e163340a57473ed3003075b42c273d8ea52b89bf2234bffd7e6209d86979",
+        "reference.py": "4444a400256d8c63afccad3e350830f4ffab83a580853b93037f64ed5986a314",
+        "faulty.py": "53d525a71ce61e179cf39627e6219bf0242f8ba673b958d40fe2d75d1e362b9d",
+        "regression.py": "120c452b4c938144e19b9f8e2f530e822140e68fc50c8bcfad9f21a1e7c7c06e",
+        "checks.py": "c656212586bd37d65e0176b66687101a395f6ac7be2a571df89a2bc01f44831a"
+      },
+      "criteria": "All visible, security, and regression checks must pass. Separate category denominators; no weighted safety override."
+    }
+  ],
+  "runs": [
+    {
+      "task_id": "SEC-411",
+      "title": "Tenant-scoped record access",
+      "candidate_id": "reference",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "0004e47d33f47a52b1eba1b2d8e030b3d35cd2cd8c34e2ae7356f09d86126605",
+      "fixture_sha256": {
+        "baseline.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "reference.py": "0004e47d33f47a52b1eba1b2d8e030b3d35cd2cd8c34e2ae7356f09d86126605",
+        "faulty.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "regression.py": "3c7ca5fe2a018fec4014f69043399f58dc105a743e887c0cf817c44965f59f6a",
+        "checks.py": "b310fa93c6f5bb5a38e6ee4058b718b864961744616b65f37f59db87a075aabf"
+      },
+      "manifest_sha256": "9f3d91605c6257763b9078aec79b7cb477b7aab5866111534ac8d3623b4c4b05",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_missing",
+              "passed": true,
+              "duration_ms": 0.001
+            },
+            {
+              "name": "visible_present",
+              "passed": true,
+              "duration_ms": 0.002
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 65.11,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_missing\", \"passed\": true, \"duration_ms\": 0.001}, {\"name\": \"visible_present\", \"passed\": true, \"duration_ms\": 0.002}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "security_cross_tenant",
+              "passed": true,
+              "duration_ms": 0.001
+            },
+            {
+              "name": "security_empty_identity",
+              "passed": true,
+              "duration_ms": 0.001
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 35.53,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"security_cross_tenant\", \"passed\": true, \"duration_ms\": 0.001}, {\"name\": \"security_empty_identity\", \"passed\": true, \"duration_ms\": 0.001}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "regression_authorized",
+              "passed": true,
+              "duration_ms": 0.002
+            },
+            {
+              "name": "regression_result_is_copy",
+              "passed": true,
+              "duration_ms": 0.002
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 34.06,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"regression_authorized\", \"passed\": true, \"duration_ms\": 0.002}, {\"name\": \"regression_result_is_copy\", \"passed\": true, \"duration_ms\": 0.002}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [],
+      "maintainability_warnings": [],
+      "release_ready": true,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.054616+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "SEC-411",
+      "title": "Tenant-scoped record access",
+      "candidate_id": "faulty",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+      "fixture_sha256": {
+        "baseline.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "reference.py": "0004e47d33f47a52b1eba1b2d8e030b3d35cd2cd8c34e2ae7356f09d86126605",
+        "faulty.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "regression.py": "3c7ca5fe2a018fec4014f69043399f58dc105a743e887c0cf817c44965f59f6a",
+        "checks.py": "b310fa93c6f5bb5a38e6ee4058b718b864961744616b65f37f59db87a075aabf"
+      },
+      "manifest_sha256": "9f3d91605c6257763b9078aec79b7cb477b7aab5866111534ac8d3623b4c4b05",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_missing",
+              "passed": true,
+              "duration_ms": 0.001
+            },
+            {
+              "name": "visible_present",
+              "passed": true,
+              "duration_ms": 0.001
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.37,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_missing\", \"passed\": true, \"duration_ms\": 0.001}, {\"name\": \"visible_present\", \"passed\": true, \"duration_ms\": 0.001}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "security_cross_tenant",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "",
+              "duration_ms": 0.007
+            },
+            {
+              "name": "security_empty_identity",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "",
+              "duration_ms": 0.002
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.55,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"security_cross_tenant\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"\", \"duration_ms\": 0.007}, {\"name\": \"security_empty_identity\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"\", \"duration_ms\": 0.002}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "regression_authorized",
+              "passed": true,
+              "duration_ms": 0.001
+            },
+            {
+              "name": "regression_result_is_copy",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "",
+              "duration_ms": 0.007
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.75,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"regression_authorized\", \"passed\": true, \"duration_ms\": 0.001}, {\"name\": \"regression_result_is_copy\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"\", \"duration_ms\": 0.007}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [
+        "regression_failure",
+        "security_failure"
+      ],
+      "maintainability_warnings": [],
+      "release_ready": false,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.154566+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "SEC-411",
+      "title": "Tenant-scoped record access",
+      "candidate_id": "regression",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "3c7ca5fe2a018fec4014f69043399f58dc105a743e887c0cf817c44965f59f6a",
+      "fixture_sha256": {
+        "baseline.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "reference.py": "0004e47d33f47a52b1eba1b2d8e030b3d35cd2cd8c34e2ae7356f09d86126605",
+        "faulty.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+        "regression.py": "3c7ca5fe2a018fec4014f69043399f58dc105a743e887c0cf817c44965f59f6a",
+        "checks.py": "b310fa93c6f5bb5a38e6ee4058b718b864961744616b65f37f59db87a075aabf"
+      },
+      "manifest_sha256": "9f3d91605c6257763b9078aec79b7cb477b7aab5866111534ac8d3623b4c4b05",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "visible_missing",
+              "passed": true,
+              "duration_ms": 0.001
+            },
+            {
+              "name": "visible_present",
+              "passed": false,
+              "error": "TypeError",
+              "message": "'NoneType' object is not subscriptable",
+              "duration_ms": 0.003
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.34,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"visible_missing\", \"passed\": true, \"duration_ms\": 0.001}, {\"name\": \"visible_present\", \"passed\": false, \"error\": \"TypeError\", \"message\": \"'NoneType' object is not subscriptable\", \"duration_ms\": 0.003}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "security_cross_tenant",
+              "passed": true,
+              "duration_ms": 0.001
+            },
+            {
+              "name": "security_empty_identity",
+              "passed": true,
+              "duration_ms": 0.001
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.76,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"security_cross_tenant\", \"passed\": true, \"duration_ms\": 0.001}, {\"name\": \"security_empty_identity\", \"passed\": true, \"duration_ms\": 0.001}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "regression_authorized",
+              "passed": false,
+              "error": "TypeError",
+              "message": "'NoneType' object is not subscriptable",
+              "duration_ms": 0.004
+            },
+            {
+              "name": "regression_result_is_copy",
+              "passed": false,
+              "error": "TypeError",
+              "message": "'NoneType' object does not support item assignment",
+              "duration_ms": 0.004
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.52,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"regression_authorized\", \"passed\": false, \"error\": \"TypeError\", \"message\": \"'NoneType' object is not subscriptable\", \"duration_ms\": 0.004}, {\"name\": \"regression_result_is_copy\", \"passed\": false, \"error\": \"TypeError\", \"message\": \"'NoneType' object does not support item assignment\", \"duration_ms\": 0.004}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [
+        "correctness_failure",
+        "regression_failure"
+      ],
+      "maintainability_warnings": [],
+      "release_ready": false,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.253361+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "DB-307",
+      "title": "Parameterized tenant search",
+      "candidate_id": "reference",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "9392cb81c162cb7d3038045adbfa73b5350e1eb6087e773a56df2f68fa12ff88",
+      "fixture_sha256": {
+        "baseline.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "reference.py": "9392cb81c162cb7d3038045adbfa73b5350e1eb6087e773a56df2f68fa12ff88",
+        "faulty.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "regression.py": "11855ab97cfdb7ad119201ef4dc861b81778ad270010924635bcadb3e17f0e67",
+        "checks.py": "38931a9096d7bae847da0d6c455581d18b70950abfd8876d9912aed8dc120bbb"
+      },
+      "manifest_sha256": "9f159fbb30be21491930825e4a71e079def6821e63508be99e982fff9ec8ee51",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_match",
+              "passed": true,
+              "duration_ms": 0.257
+            },
+            {
+              "name": "visible_missing",
+              "passed": true,
+              "duration_ms": 0.076
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.36,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_match\", \"passed\": true, \"duration_ms\": 0.257}, {\"name\": \"visible_missing\", \"passed\": true, \"duration_ms\": 0.076}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "security_sql_literal",
+              "passed": true,
+              "duration_ms": 0.245
+            },
+            {
+              "name": "security_tenant_literal",
+              "passed": true,
+              "duration_ms": 0.079
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.5,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"security_sql_literal\", \"passed\": true, \"duration_ms\": 0.245}, {\"name\": \"security_tenant_literal\", \"passed\": true, \"duration_ms\": 0.079}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "regression_apostrophe",
+              "passed": true,
+              "duration_ms": 0.215
+            },
+            {
+              "name": "regression_case_sensitive",
+              "passed": true,
+              "duration_ms": 0.073
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.44,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"regression_apostrophe\", \"passed\": true, \"duration_ms\": 0.215}, {\"name\": \"regression_case_sensitive\", \"passed\": true, \"duration_ms\": 0.073}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [],
+      "maintainability_warnings": [
+        "Long source line (>100 characters)"
+      ],
+      "release_ready": true,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.351541+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "DB-307",
+      "title": "Parameterized tenant search",
+      "candidate_id": "faulty",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+      "fixture_sha256": {
+        "baseline.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "reference.py": "9392cb81c162cb7d3038045adbfa73b5350e1eb6087e773a56df2f68fa12ff88",
+        "faulty.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "regression.py": "11855ab97cfdb7ad119201ef4dc861b81778ad270010924635bcadb3e17f0e67",
+        "checks.py": "38931a9096d7bae847da0d6c455581d18b70950abfd8876d9912aed8dc120bbb"
+      },
+      "manifest_sha256": "9f159fbb30be21491930825e4a71e079def6821e63508be99e982fff9ec8ee51",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_match",
+              "passed": true,
+              "duration_ms": 0.223
+            },
+            {
+              "name": "visible_missing",
+              "passed": true,
+              "duration_ms": 0.072
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.6,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_match\", \"passed\": true, \"duration_ms\": 0.223}, {\"name\": \"visible_missing\", \"passed\": true, \"duration_ms\": 0.072}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "security_sql_literal",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "",
+              "duration_ms": 0.27
+            },
+            {
+              "name": "security_tenant_literal",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "",
+              "duration_ms": 0.081
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.66,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"security_sql_literal\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"\", \"duration_ms\": 0.27}, {\"name\": \"security_tenant_literal\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"\", \"duration_ms\": 0.081}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "regression_apostrophe",
+              "passed": false,
+              "error": "OperationalError",
+              "message": "near \"Reilly\": syntax error",
+              "duration_ms": 0.223
+            },
+            {
+              "name": "regression_case_sensitive",
+              "passed": true,
+              "duration_ms": 0.073
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.39,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"regression_apostrophe\", \"passed\": false, \"error\": \"OperationalError\", \"message\": \"near \\\"Reilly\\\": syntax error\", \"duration_ms\": 0.223}, {\"name\": \"regression_case_sensitive\", \"passed\": true, \"duration_ms\": 0.073}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [
+        "regression_failure",
+        "security_failure"
+      ],
+      "maintainability_warnings": [
+        "Long source line (>100 characters)"
+      ],
+      "release_ready": false,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.450050+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "DB-307",
+      "title": "Parameterized tenant search",
+      "candidate_id": "regression",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "11855ab97cfdb7ad119201ef4dc861b81778ad270010924635bcadb3e17f0e67",
+      "fixture_sha256": {
+        "baseline.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "reference.py": "9392cb81c162cb7d3038045adbfa73b5350e1eb6087e773a56df2f68fa12ff88",
+        "faulty.py": "74eec31a7db681233b29a637fed46b0e1a113ce858d29d2464d3c1593fcc8231",
+        "regression.py": "11855ab97cfdb7ad119201ef4dc861b81778ad270010924635bcadb3e17f0e67",
+        "checks.py": "38931a9096d7bae847da0d6c455581d18b70950abfd8876d9912aed8dc120bbb"
+      },
+      "manifest_sha256": "9f159fbb30be21491930825e4a71e079def6821e63508be99e982fff9ec8ee51",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_match",
+              "passed": true,
+              "duration_ms": 0.238
+            },
+            {
+              "name": "visible_missing",
+              "passed": true,
+              "duration_ms": 0.075
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.28,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_match\", \"passed\": true, \"duration_ms\": 0.238}, {\"name\": \"visible_missing\", \"passed\": true, \"duration_ms\": 0.075}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "security_sql_literal",
+              "passed": true,
+              "duration_ms": 0.23
+            },
+            {
+              "name": "security_tenant_literal",
+              "passed": true,
+              "duration_ms": 0.118
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.81,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"security_sql_literal\", \"passed\": true, \"duration_ms\": 0.23}, {\"name\": \"security_tenant_literal\", \"passed\": true, \"duration_ms\": 0.118}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "regression_apostrophe",
+              "passed": true,
+              "duration_ms": 0.244
+            },
+            {
+              "name": "regression_case_sensitive",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "",
+              "duration_ms": 0.11
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.49,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"regression_apostrophe\", \"passed\": true, \"duration_ms\": 0.244}, {\"name\": \"regression_case_sensitive\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"\", \"duration_ms\": 0.11}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [
+        "regression_failure"
+      ],
+      "maintainability_warnings": [
+        "Long source line (>100 characters)"
+      ],
+      "release_ready": false,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.548590+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "FILE-101",
+      "title": "Contained file resolution",
+      "candidate_id": "reference",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "4444a400256d8c63afccad3e350830f4ffab83a580853b93037f64ed5986a314",
+      "fixture_sha256": {
+        "baseline.py": "c1b3e163340a57473ed3003075b42c273d8ea52b89bf2234bffd7e6209d86979",
+        "reference.py": "4444a400256d8c63afccad3e350830f4ffab83a580853b93037f64ed5986a314",
+        "faulty.py": "53d525a71ce61e179cf39627e6219bf0242f8ba673b958d40fe2d75d1e362b9d",
+        "regression.py": "120c452b4c938144e19b9f8e2f530e822140e68fc50c8bcfad9f21a1e7c7c06e",
+        "checks.py": "c656212586bd37d65e0176b66687101a395f6ac7be2a571df89a2bc01f44831a"
+      },
+      "manifest_sha256": "6f2df8bdfe9179a1884324b4b62c8097e3ef3adbc800fa15604c5168d0c388b3",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_file",
+              "passed": true,
+              "duration_ms": 0.402
+            },
+            {
+              "name": "visible_parent_escape",
+              "passed": true,
+              "duration_ms": 0.097
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 65.22,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_file\", \"passed\": true, \"duration_ms\": 0.402}, {\"name\": \"visible_parent_escape\", \"passed\": true, \"duration_ms\": 0.097}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "security_absolute",
+              "passed": true,
+              "duration_ms": 0.303
+            },
+            {
+              "name": "security_prefix_sibling",
+              "passed": true,
+              "duration_ms": 0.172
+            },
+            {
+              "name": "security_symlink",
+              "passed": true,
+              "duration_ms": 0.139
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.71,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"security_absolute\", \"passed\": true, \"duration_ms\": 0.303}, {\"name\": \"security_prefix_sibling\", \"passed\": true, \"duration_ms\": 0.172}, {\"name\": \"security_symlink\", \"passed\": true, \"duration_ms\": 0.139}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "regression_dot_name",
+              "passed": true,
+              "duration_ms": 0.321
+            },
+            {
+              "name": "regression_subdirectory",
+              "passed": true,
+              "duration_ms": 0.261
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.59,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"regression_dot_name\", \"passed\": true, \"duration_ms\": 0.321}, {\"name\": \"regression_subdirectory\", \"passed\": true, \"duration_ms\": 0.261}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [],
+      "maintainability_warnings": [],
+      "release_ready": true,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.679858+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "FILE-101",
+      "title": "Contained file resolution",
+      "candidate_id": "faulty",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "53d525a71ce61e179cf39627e6219bf0242f8ba673b958d40fe2d75d1e362b9d",
+      "fixture_sha256": {
+        "baseline.py": "c1b3e163340a57473ed3003075b42c273d8ea52b89bf2234bffd7e6209d86979",
+        "reference.py": "4444a400256d8c63afccad3e350830f4ffab83a580853b93037f64ed5986a314",
+        "faulty.py": "53d525a71ce61e179cf39627e6219bf0242f8ba673b958d40fe2d75d1e362b9d",
+        "regression.py": "120c452b4c938144e19b9f8e2f530e822140e68fc50c8bcfad9f21a1e7c7c06e",
+        "checks.py": "c656212586bd37d65e0176b66687101a395f6ac7be2a571df89a2bc01f44831a"
+      },
+      "manifest_sha256": "6f2df8bdfe9179a1884324b4b62c8097e3ef3adbc800fa15604c5168d0c388b3",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_file",
+              "passed": true,
+              "duration_ms": 0.252
+            },
+            {
+              "name": "visible_parent_escape",
+              "passed": true,
+              "duration_ms": 0.105
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.42,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_file\", \"passed\": true, \"duration_ms\": 0.252}, {\"name\": \"visible_parent_escape\", \"passed\": true, \"duration_ms\": 0.105}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "security_absolute",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "unsafe path accepted",
+              "duration_ms": 0.292
+            },
+            {
+              "name": "security_prefix_sibling",
+              "passed": false,
+              "error": "AssertionError",
+              "message": "unsafe path accepted",
+              "duration_ms": 0.116
+            },
+            {
+              "name": "security_symlink",
+              "passed": true,
+              "duration_ms": 0.113
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.74,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"security_absolute\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"unsafe path accepted\", \"duration_ms\": 0.292}, {\"name\": \"security_prefix_sibling\", \"passed\": false, \"error\": \"AssertionError\", \"message\": \"unsafe path accepted\", \"duration_ms\": 0.116}, {\"name\": \"security_symlink\", \"passed\": true, \"duration_ms\": 0.113}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "regression_dot_name",
+              "passed": true,
+              "duration_ms": 0.378
+            },
+            {
+              "name": "regression_subdirectory",
+              "passed": true,
+              "duration_ms": 0.121
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.6,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"regression_dot_name\", \"passed\": true, \"duration_ms\": 0.378}, {\"name\": \"regression_subdirectory\", \"passed\": true, \"duration_ms\": 0.121}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [
+        "security_failure"
+      ],
+      "maintainability_warnings": [],
+      "release_ready": false,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.778268+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    },
+    {
+      "task_id": "FILE-101",
+      "title": "Contained file resolution",
+      "candidate_id": "regression",
+      "label": "synthetic-fixture",
+      "repeat": 1,
+      "provenance": "synthetic, locally authored fixture; not a real model evaluation",
+      "benchmark_version": "1.0.0",
+      "candidate_sha256": "120c452b4c938144e19b9f8e2f530e822140e68fc50c8bcfad9f21a1e7c7c06e",
+      "fixture_sha256": {
+        "baseline.py": "c1b3e163340a57473ed3003075b42c273d8ea52b89bf2234bffd7e6209d86979",
+        "reference.py": "4444a400256d8c63afccad3e350830f4ffab83a580853b93037f64ed5986a314",
+        "faulty.py": "53d525a71ce61e179cf39627e6219bf0242f8ba673b958d40fe2d75d1e362b9d",
+        "regression.py": "120c452b4c938144e19b9f8e2f530e822140e68fc50c8bcfad9f21a1e7c7c06e",
+        "checks.py": "c656212586bd37d65e0176b66687101a395f6ac7be2a571df89a2bc01f44831a"
+      },
+      "manifest_sha256": "6f2df8bdfe9179a1884324b4b62c8097e3ef3adbc800fa15604c5168d0c388b3",
+      "runner_sha256": "62bfcbcf4c14a1cc180c453934690a6a0f76279184d0cc5aa1edc54dd2717269",
+      "worker_sha256": "3a8405936830da8f5bb95cdf479597b8504a265120f78cffe88b0d9c000fa1dc",
+      "groups": {
+        "visible": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "visible_file",
+              "passed": true,
+              "duration_ms": 0.234
+            },
+            {
+              "name": "visible_parent_escape",
+              "passed": true,
+              "duration_ms": 0.035
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.38,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"visible_file\", \"passed\": true, \"duration_ms\": 0.234}, {\"name\": \"visible_parent_escape\", \"passed\": true, \"duration_ms\": 0.035}]}\n",
+          "log_truncated": false
+        },
+        "security": {
+          "status": "pass",
+          "tests": [
+            {
+              "name": "security_absolute",
+              "passed": true,
+              "duration_ms": 0.264
+            },
+            {
+              "name": "security_prefix_sibling",
+              "passed": true,
+              "duration_ms": 0.113
+            },
+            {
+              "name": "security_symlink",
+              "passed": true,
+              "duration_ms": 0.084
+            }
+          ],
+          "exit_code": 0,
+          "duration_ms": 32.45,
+          "log": "{\"status\": \"pass\", \"tests\": [{\"name\": \"security_absolute\", \"passed\": true, \"duration_ms\": 0.264}, {\"name\": \"security_prefix_sibling\", \"passed\": true, \"duration_ms\": 0.113}, {\"name\": \"security_symlink\", \"passed\": true, \"duration_ms\": 0.084}]}\n",
+          "log_truncated": false
+        },
+        "regression": {
+          "status": "test_failure",
+          "tests": [
+            {
+              "name": "regression_dot_name",
+              "passed": false,
+              "error": "ValueError",
+              "message": "invalid",
+              "duration_ms": 0.179
+            },
+            {
+              "name": "regression_subdirectory",
+              "passed": false,
+              "error": "ValueError",
+              "message": "invalid",
+              "duration_ms": 0.036
+            }
+          ],
+          "exit_code": 1,
+          "duration_ms": 32.71,
+          "log": "{\"status\": \"test_failure\", \"tests\": [{\"name\": \"regression_dot_name\", \"passed\": false, \"error\": \"ValueError\", \"message\": \"invalid\", \"duration_ms\": 0.179}, {\"name\": \"regression_subdirectory\", \"passed\": false, \"error\": \"ValueError\", \"message\": \"invalid\", \"duration_ms\": 0.036}]}\n",
+          "log_truncated": false
+        }
+      },
+      "failure_categories": [
+        "regression_failure"
+      ],
+      "maintainability_warnings": [],
+      "release_ready": false,
+      "mode": "trusted_fixture_only",
+      "isolation": "POSIX subprocess guardrails; not a malicious-code sandbox",
+      "observed_at": "2026-11-03T22:16:13.876869+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+        "cpu_seconds": 2,
+        "memory_mb": 192,
+        "wall_seconds_per_group": 5,
+        "network_isolated": false,
+        "arbitrary_execution_enabled": false
+      }
+    }
+  ]
+}

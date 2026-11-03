@@ -1,0 +1,10 @@
+task_id,candidate_id,repeat,visible,security,regression,release_ready,failure_categories
+SEC-411,reference,1,pass,pass,pass,True,
+SEC-411,faulty,1,pass,test_failure,test_failure,False,regression_failure;security_failure
+SEC-411,regression,1,test_failure,pass,test_failure,False,correctness_failure;regression_failure
+DB-307,reference,1,pass,pass,pass,True,
+DB-307,faulty,1,pass,test_failure,test_failure,False,regression_failure;security_failure
+DB-307,regression,1,pass,pass,test_failure,False,regression_failure
+FILE-101,reference,1,pass,pass,pass,True,
+FILE-101,faulty,1,pass,test_failure,pass,False,security_failure
+FILE-101,regression,1,pass,pass,test_failure,False,regression_failure

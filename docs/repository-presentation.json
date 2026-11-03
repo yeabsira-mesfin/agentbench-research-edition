@@ -1,0 +1,18 @@
+{
+  "intended_name": "agentbench-swe",
+  "description": "Versioned coding-agent evaluation workbench with weighted rubrics, review evidence, and security/regression gates.",
+  "topics": [
+    "ai-evaluation",
+    "ai-agents",
+    "software-engineering",
+    "benchmark",
+    "react",
+    "typescript",
+    "python",
+    "fastapi",
+    "testing",
+    "ci-cd"
+  ],
+  "settings_applied": true
+}
+

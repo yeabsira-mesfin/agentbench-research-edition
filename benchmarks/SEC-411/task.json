@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "benchmark_version": "1.0.0",
+  "id": "SEC-411",
+  "title": "Tenant-scoped record access",
+  "description": "Return records only for the authenticated tenant. Missing and forbidden records must have identical responses.",
+  "category": "Security",
+  "difficulty": "medium",
+  "language": "Python",
+  "runtime": "Python >=3.12",
+  "baseline": "baseline.py",
+  "checks": "checks.py",
+  "visible_prefix": "visible_",
+  "independent_prefixes": [
+    "security_",
+    "regression_"
+  ],
+  "reference": "reference",
+  "candidates": {
+    "reference": {
+      "file": "reference.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "pass"
+    },
+    "faulty": {
+      "file": "faulty.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "security_failure"
+    },
+    "regression": {
+      "file": "regression.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "regression_failure"
+    }
+  },
+  "sha256": {
+    "baseline.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+    "reference.py": "0004e47d33f47a52b1eba1b2d8e030b3d35cd2cd8c34e2ae7356f09d86126605",
+    "faulty.py": "ae16cd19e4642969e9eecaa3276a160ba6bd663ca235cf6319f76ecb1c7b77a3",
+    "regression.py": "3c7ca5fe2a018fec4014f69043399f58dc105a743e887c0cf817c44965f59f6a",
+    "checks.py": "b310fa93c6f5bb5a38e6ee4058b718b864961744616b65f37f59db87a075aabf"
+  },
+  "criteria": "All visible, security, and regression checks must pass. Separate category denominators; no weighted safety override."
+}

@@ -1,0 +1,33 @@
+{
+  "verified_date": "2026-10-07",
+  "kind": "deployment and synthetic fixture smoke tests, not model evaluation",
+  "vercel_url": "https://agentbench-swe.vercel.app/",
+  "github_pages_url": "https://yeabsira-mesfin.github.io/agentbench-swe/",
+  "checks": {
+    "/": {
+      "status": 200,
+      "https": true,
+      "nosniff": "nosniff"
+    },
+    "/health": {
+      "status": 200,
+      "https": true,
+      "nosniff": "nosniff"
+    },
+    "/review/example": {
+      "status": 200,
+      "https": true,
+      "nosniff": "nosniff"
+    },
+    "pages_cors": "https://yeabsira-mesfin.github.io",
+    "untrusted_cors": null,
+    "api": {
+      "status": 200,
+      "body": "{\"score\":100.0,\"grade\":\"excellent\",\"weights\":{\"correctness\":0.4,\"security\":0.2,\"tests\":0.15,\"maintainability\":0.15,\"documentation\":0.1},\"dimensions\":{\"correctness\":100.0,\"security\":100.0,\"tests\":100.0,\"maintainability\":100.0,\"documentation\":100.0},\"task_id\":\"AUTH-101\",\"rubric_version\":\"1.1\",\"mode\":\"reviewer_attested\",\"explanation\":\"Review evidence "
+    },
+    "bundle_assets": 1,
+    "bundle_suspicions": []
+  },
+  "mobile_scope": "390x844 local production build; live browser checked at desktop viewport"
+}
+

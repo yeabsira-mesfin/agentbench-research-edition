@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "benchmark_version": "1.0.0",
+  "id": "FILE-101",
+  "title": "Contained file resolution",
+  "description": "Resolve relative paths beneath a trusted root, rejecting traversal, absolute paths, and escaping symlinks.",
+  "category": "File security",
+  "difficulty": "medium",
+  "language": "Python",
+  "runtime": "Python >=3.12",
+  "baseline": "baseline.py",
+  "checks": "checks.py",
+  "visible_prefix": "visible_",
+  "independent_prefixes": [
+    "security_",
+    "regression_"
+  ],
+  "reference": "reference",
+  "candidates": {
+    "reference": {
+      "file": "reference.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "pass"
+    },
+    "faulty": {
+      "file": "faulty.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "security_failure"
+    },
+    "regression": {
+      "file": "regression.py",
+      "provenance": "synthetic, locally authored fixture",
+      "expected": "regression_failure"
+    }
+  },
+  "sha256": {
+    "baseline.py": "c1b3e163340a57473ed3003075b42c273d8ea52b89bf2234bffd7e6209d86979",
+    "reference.py": "4444a400256d8c63afccad3e350830f4ffab83a580853b93037f64ed5986a314",
+    "faulty.py": "53d525a71ce61e179cf39627e6219bf0242f8ba673b958d40fe2d75d1e362b9d",
+    "regression.py": "120c452b4c938144e19b9f8e2f530e822140e68fc50c8bcfad9f21a1e7c7c06e",
+    "checks.py": "c656212586bd37d65e0176b66687101a395f6ac7be2a571df89a2bc01f44831a"
+  },
+  "criteria": "All visible, security, and regression checks must pass. Separate category denominators; no weighted safety override."
+}
