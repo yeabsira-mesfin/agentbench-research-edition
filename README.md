@@ -2,7 +2,7 @@
 
 **When does a candidate pass basic correctness yet fail security or regression checks?**
 
-An executable research extension of [AgentBench SWE](https://github.com/yeabsira-mesfin/agentbench-swe), with the original React reviewer workbench and FastAPI scoring API preserved. The original deployment is not changed. This repository reuses the former `JavaScript` repository; its earlier learning files and commit history remain intact. Intended new name: `agentbench-research-edition`.
+An executable research extension of [AgentBench SWE](https://github.com/yeabsira-mesfin/agentbench-swe), with the original React reviewer workbench and FastAPI scoring API preserved. The original deployment is not changed. This repository was repurposed from an earlier JavaScript learning repository. Its unrelated practice files have been removed from the current tree; earlier versions remain accessible in Git history.
 
 ## What works
 
