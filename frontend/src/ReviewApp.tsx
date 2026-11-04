@@ -104,14 +104,14 @@ export default function App() {
       <nav>
         <div className="brand">
           <Bot />
-          <span>AgentBench SWE</span>
+          <span>AgentBench Research Edition</span>
         </div>
         <a
-          href="https://github.com/yeabsira-mesfin/agentbench-swe"
+          href="https://github.com/yeabsira-mesfin/agentbench-research-edition"
           target="_blank"
           rel="noreferrer"
         >
-          Source code
+          View Source
         </a>
       </nav>
       <section className="hero">

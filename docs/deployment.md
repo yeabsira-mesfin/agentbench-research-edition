@@ -1,6 +1,6 @@
 # Deploy on Vercel
 
-Import this existing GitHub repository into Vercel as a new project. Use the repository root (`./`). The committed `vercel.json` supplies the build configuration. No paid service or secret is needed for the dashboard.
+Import `yeabsira-mesfin/agentbench-research-edition` into Vercel as a **new project**, leaving the separate `agentbench-swe` deployment unchanged. Use repository root (`./`) and select **Services** as the framework for the root multi-service `vercel.json` configuration. Vercel Services is in beta. Do not claim a deployment until a production build and its assigned URL are verified. No paid service or secret is needed for the static research dashboard.
 
 For the two static research dashboards: framework **Vite**, install `npm ci --ignore-scripts`, build `npm run build`, output `dist`. Python data collection runs locally, never during a Vercel request or frontend build. Commit a refreshed `public/data/*.json` and Vercel rebuilds the dashboard.
 
